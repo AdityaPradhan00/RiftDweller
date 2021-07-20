@@ -15,15 +15,33 @@
 /*===== Fuente y tipografia =====*/
 :root{
   --body-font: 'Poppins', sans-serif;
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
-  --normal-font-size: 0.938rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .983rem;
+  --small-font-size:  .813rem;
+  --smaller-font-size: .75rem;
 }
 @media screen and (min-width: 768px){
   :root{
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
+  }
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+      --big-font-size: 3rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
   }
 }
 
@@ -87,15 +105,6 @@ img{
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
-.home-grid{
-  max-width: 1024px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); 
-  grid-column-gap: 2rem;
-  width: calc(100% - 2rem);
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
-}
 .l-header{
   width: 100%;
   position: fixed;
@@ -107,6 +116,10 @@ img{
 }
 .spacer{
   height: calc(var(--header-height) + 1rem);
+}
+.grid{
+  display: grid;
+  gap: 1.5rem;
 }
 
 /*===== NAV =====*/
@@ -221,8 +234,8 @@ img{
   cursor: pointer;
 }
 
-/* Add some padding inside the card container */
-.container {
+/* Add some padding inside the card car */
+.car {
   padding: 1px 16px 3px 16px;
   width: 100%;
   height: auto;
@@ -238,6 +251,56 @@ img{
   margin-bottom: 1rem;
   text-align: center;
 }
+
+
+/* FOOTER */
+.footer{
+  padding: 2rem 2rem 0 2rem;
+  background-color: black;
+}
+.footer__container{
+  row-gap: 3.5rem;
+  justify-items: center;
+  align-items: center;
+}
+.footer__bg{
+  background-color: black;
+}
+.footer__title{
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.25rem;
+}
+.footer__subtitle{
+  font-size: var(--small-font-size);
+}
+.footer__links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  
+}
+.footer__link:hover{
+  color: palevioletred;
+}
+.footer__social{
+  font-size: 1.25rem;
+  margin-right: 1.5rem;
+}
+.footer__social:hover{
+  color:red;
+}
+.footer__copy{
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: aliceblue;
+  margin-top: 3rem;
+}
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social{
+  color: #FFF;
+}
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 731px){
   #home{
@@ -249,6 +312,11 @@ img{
   }
   .card{
     margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 568px){
+  .footer__container{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (min-width: 768px){
@@ -272,11 +340,33 @@ img{
   .nav__link{
     color: var(--second-color);
   }
+  .footer__container{
+    padding: 0 1rem;
+  }
+  .footer__container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__bg{
+    padding:3rem 0 3.5rem;
+  }
+  .footer__links{
+    flex-direction: row;
+    column-gap: 2rem;
+  } 
+  .footer__socials{
+    justify-self: flex-end;
+  }
+  .footer__copy{
+    margin-top: 4.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px){
   .bd-grid{
     margin-left: auto;
     margin-right: auto;
+  }
+  .footer__container{
+    padding: 0;
   }
 }
