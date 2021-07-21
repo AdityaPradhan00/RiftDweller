@@ -8,7 +8,7 @@
 
 /*===== Colores =====*/
 :root{
-  --first-color: #4070F4;
+  --first-color: rgb(255, 229, 92);
   --second-color: #0E2431;
 }
 
@@ -75,7 +75,7 @@ body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-  background-color: rgba(0, 0, 0, 0.849);
+  background-color: black;
 }
 h1,h2,p{
   margin: 0;
@@ -114,6 +114,9 @@ img{
   background-color: #000;
   box-shadow: 0 1px 4px rgb(255, 229, 92);
 }
+.l-header:hover{
+  box-shadow: 0 1px 4px rgb(255, 213, 0);
+}
 .spacer{
   height: calc(var(--header-height) + 1rem);
 }
@@ -140,8 +143,9 @@ img{
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color: black;
     transition: .5s;
+    opacity: .9;
   }
 }
 
@@ -192,14 +196,34 @@ img{
 }
 
 /* HOME */
-.heading{
-  font-size: 3.5rem;
-  text-align: center;
-  color: #AE09F6;
+.header-img{
+  width: 100%;
+  position: relative;
+  height: 10rem;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgb(255, 229, 92);
+  z-index: 2;
+}
+.header-img:hover{
+  box-shadow: 0 1px 4px rgb(255, 213, 0);
 }
 /* CARDS */
+main{
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 2px 4px -1px rgb(255, 229, 92);
+  position: relative;
+  z-index: 1;
+  background-image: url(Assest/back2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main:hover{
+  box-shadow: 0 1px 4px rgb(253, 211, 0);
+}
 .section{
-  padding: 0.5rem 2rem 2rem 2rem;
+  padding: 4rem 2rem 4rem 2rem;
+  
 }
 .card {
   /* Add shadows to create the "card" effect */
@@ -313,11 +337,16 @@ img{
   .card{
     margin-bottom: 1rem;
   }
+  .header-img{
+    width: 100%;
+    height: 4rem;
+  }
 }
 @media screen and (min-width: 568px){
   .footer__container{
     grid-template-columns: repeat(2, 1fr);
   }
+  
 }
 @media screen and (min-width: 768px){
   body{
