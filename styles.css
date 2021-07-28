@@ -99,8 +99,9 @@ img{
 .bd-grid{
   max-width: 1024px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); 
+  grid-template-columns: repeat(3, minmax(50px, 1fr)); 
   grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
   width: calc(100% - 2rem);
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
@@ -257,6 +258,7 @@ main:hover{
   box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
   transform: scale(1.02);
   cursor: pointer;
+
 }
 #card2:hover {
   box-shadow: 0 8px 16px 0 rgb(0, 255, 0);
@@ -267,6 +269,24 @@ main:hover{
   box-shadow: 0 8px 16px 0 rgb(0, 0, 255);
   transform: scale(1.02);
   cursor: pointer;
+}
+.card1:hover {
+  box-shadow: 0 8px 16px 0 rgb(255, 0, 0);
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: 0.1s;
+}
+.card2:hover {
+  box-shadow: 0 8px 16px 0 rgb(0, 255, 0);
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: 0.1s;
+}
+.card3:hover {
+  box-shadow: 0 8px 16px 0 rgb(0, 0, 255);
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: 0.1s;
 }
 
 /* Add some padding inside the card car */
